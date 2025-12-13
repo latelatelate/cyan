@@ -1,0 +1,14 @@
+[Unit]
+Description=NGINX Reverse Proxy in cyan pod
+Requires=cyan.pod
+After=cyan.pod
+
+[Container]
+Image=nginx:latest
+Pod=cyan.pod
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
