@@ -1,0 +1,10 @@
+[Unit]
+Description=A Containerized Blue/Green Web Pod
+
+[Pod]
+PodName=cyan
+PublishPort=8080:80
+Network=webapp-net.network
+
+[Install]
+WantedBy=multi-user.target default.target

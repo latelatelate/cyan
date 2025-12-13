@@ -1,0 +1,14 @@
+[Unit]
+Description=MySQL Database for Cyan Pod
+Requires=cyan.pod
+After=cyan.pod
+
+[Container]
+Image=mysql:latest
+Pod=cyan.pod
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
