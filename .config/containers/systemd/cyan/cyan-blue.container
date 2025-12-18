@@ -6,6 +6,7 @@ After=cyan.pod
 [Container]
 Image=nginx:latest
 Pod=cyan.pod
+Volume=cyan-app.volume:/srv/app/data
 
 [Service]
 Restart=always
