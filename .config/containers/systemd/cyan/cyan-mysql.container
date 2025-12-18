@@ -6,6 +6,7 @@ After=cyan.pod
 [Container]
 Image=mysql:latest
 Pod=cyan.pod
+Volume=webapp-db.volume:/var/lib/mysql
 
 [Service]
 Restart=always
