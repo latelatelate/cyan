@@ -4,7 +4,7 @@ Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=cyan-blue:latest
+Image=localhost/cyan-blue:latest
 Pod=cyan.pod
 Volume=cyan-app.volume:/srv/app/data
 
