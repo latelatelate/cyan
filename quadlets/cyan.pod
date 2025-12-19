@@ -7,6 +7,8 @@ PublishPort=80:80
 PublishPort=443:443
 PublishPort=443:443/udp
 Network=cyan.network
+NetworkAlias=static.cyan.interal
+NetworkAlias=www.cyan.internal
 
 [Install]
 WantedBy=multi-user.target default.target
