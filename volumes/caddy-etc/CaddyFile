@@ -1,0 +1,21 @@
+{
+	admin unix//run/admin.sock
+}
+
+# HTTP to HTTPS redirect
+http:// {
+	redir https://{host}{uri}
+	log
+}
+
+# Main services on the custom network
+https://www.cyan.internal {
+	reverse_proxy systemd-cyan-blue:8081
+	log
+}
+
+https://static.cyan.internal {
+	root * /static
+	file_server
+	log
+}
