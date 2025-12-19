@@ -4,9 +4,9 @@ Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=mysql:latest
+Image=docker.io/library/mysql:latest
 Pod=cyan.pod
-Volume=webapp-db.volume:/var/lib/mysql
+Volume=cyan-db.volume:/var/lib/mysql
 
 [Service]
 Restart=always
