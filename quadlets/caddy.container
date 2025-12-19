@@ -1,6 +1,6 @@
 [Unit]
-AssertPathIsDirectory=%h/caddy_etc
-AssertPathExists=%h/caddy_etc/Caddyfile
+AssertPathIsDirectory=/opt/cyan/volumes/caddy-etc
+AssertPathExists=/opt/cyan/volumes/caddy-etc/Caddyfile
 AssertPathIsDirectory=%h/caddy_static
 
 [Service]
@@ -15,7 +15,7 @@ Notify=true
 PublishPort=80:80
 PublishPort=443:443
 PublishPort=443:443/udp
-Volume=%h/caddy_etc:/etc/caddy:Z
+Volume=/opt/cyan/volumes/caddy-etc:/etc/caddy:Z
 Volume=%h/caddy_static:/static:Z,ro
 Volume=caddy_config.volume:/config
 Volume=caddy_data.volume:/data
