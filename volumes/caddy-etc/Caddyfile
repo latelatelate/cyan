@@ -2,6 +2,14 @@
 	admin unix//run/admin.sock
 }
 
+(blue) {
+	reverse_proxy localhost:8081
+}
+
+(green) {
+	reverse_proxy localhost:8082
+}
+
 # HTTP to HTTPS redirect
 http:// {
 	redir https://{host}{uri} permanent
@@ -16,7 +24,7 @@ https://www.cyan.internal {
 
 # Main services on the custom network
 https://cyan.internal {
-	reverse_proxy systemd-cyan-blue:8081
+	import green
 	log
 }
 
