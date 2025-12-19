@@ -19,5 +19,3 @@ Volume=/opt/cyan/volumes/caddy-etc:/etc/caddy:Z
 Volume=%h/caddy_static:/static:Z,ro
 Volume=caddy_config.volume:/config
 Volume=caddy_data.volume:/data
-NetworkAlias=static.cyan.interal
-NetworkAlias=www.cyan.internal
