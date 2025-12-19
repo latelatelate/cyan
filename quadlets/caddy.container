@@ -4,7 +4,7 @@ AssertPathExists=%h/caddy_etc/Caddyfile
 AssertPathIsDirectory=%h/caddy_static
 
 [Service]
-ExecReload=podman exec caddy /usr/bin/caddy reload --config /etc/caddy/Caddyfile --address unix//run/admin.sock --force
+ExecReload=podman exec caddy /usr/bin/caddy reload --config /etc/caddy/Caddyfile
 
 [Container]
 ContainerName=caddy
@@ -12,6 +12,9 @@ Exec=/usr/bin/caddy run --config /etc/caddy/Caddyfile
 Image=docker.io/library/caddy
 Network=cyan.network
 Notify=true
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=443:443/udp
 Volume=%h/caddy_etc:/etc/caddy:Z
 Volume=%h/caddy_static:/static:Z,ro
 Volume=caddy_config.volume:/config
