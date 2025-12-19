@@ -10,7 +10,7 @@ http:// {
 
 # WWW redirect
 https://www.cyan.internal {
-	redir https://{host}{uri} permanent
+	redir https://cyan.internal{uri} permanent
 	log
 }
 
