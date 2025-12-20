@@ -1,6 +1,4 @@
-{
-    admin off
-    
+{   
     servers {
         protocols h1 h2 h2c h3
         strict_sni_host
