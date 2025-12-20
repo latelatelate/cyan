@@ -1,12 +1,13 @@
 [Unit]
-Description=Green NGINX server in cyan pod
+Description=Blue NGINX server in cyan pod
 Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=localhost/cyan-green:latest
+Image=localhost/cyan-app:blue
 Pod=cyan.pod
 Volume=cyan-app.volume:/srv/app/data
+Environment=PORT=8081
 
 [Service]
 Restart=always
