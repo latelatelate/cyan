@@ -1,6 +1,6 @@
-# README.md
+# Cyan
 
-Cyan is a containerized web application framework utilizing nginx, caddy, and mysql.
+A web application pod following blue/green deployment principles utilizing caddy, nginx, and mysql.
 
 ```mermaid
 graph LR;

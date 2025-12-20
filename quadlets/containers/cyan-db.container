@@ -1,0 +1,18 @@
+[Unit]
+Description=Database for Cyan Pod
+Requires=cyan.pod
+After=cyan.pod
+
+[Container]
+Image=docker.io/library/postgres:latest
+Pod=cyan.pod
+Environment=POSTGRES_USER=base
+Environment=POSTGRES_PASSWORD=base
+Environment=POSTGRES_HOST_AUTH_METHOD=trust
+Volume=cyan-db.volume:/var/lib/postgresql/data
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
