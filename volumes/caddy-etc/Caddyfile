@@ -12,23 +12,34 @@
 }
 
 (blue) {
-	reverse_proxy localhost:8081
+	reverse_proxy localhost:8081 {
+        import proxy_config
+    }
 }
 
 (green) {
-	reverse_proxy localhost:8082
+	reverse_proxy localhost:8082 {
+        import proxy_config
+    }
+}
+
+(proxy_config) {
+    header_up X-Real-IP {remote_host}
+    
+    transport http {
+        keepalive 30s
+        keepalive_idle_conns 10
+    }
 }
 
 # HTTP to HTTPS redirect
 http:// {
 	redir https://{host}{uri} permanent
-	log
 }
 
 # WWW redirect
 https://www.cyan.internal {
 	redir https://cyan.internal{uri} permanent
-	log
 }
 
 # Main services on the custom network
