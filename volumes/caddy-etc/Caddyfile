@@ -2,10 +2,11 @@
     admin off
     
     servers {
-        max_connections 1000
+        protocols h1 h2 h2c h3
+        strict_sni_host
         timeouts {
             read_body 10s
-            read_header 5s  
+            read_header 5s
             write 30s
             idle 120s
         }
