@@ -8,8 +8,7 @@ Image=docker.io/library/postgres:latest
 Pod=cyan.pod
 Environment=POSTGRES_USER=base
 Environment=POSTGRES_PASSWORD=base
-Environment=POSTGRES_HOST_AUTH_METHOD=trust
-Volume=cyan-db.volume:/var/lib/postgresql/data
+Volume=cyan-db.volume:/var/lib/postgresql
 
 [Service]
 Restart=always
