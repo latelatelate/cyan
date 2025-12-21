@@ -7,7 +7,7 @@ AssertPathExists=/opt/cyan/volumes/caddy-etc/Caddyfile
 AssertPathIsDirectory=%h/caddy_static
 
 [Service]
-ExecReload=podman exec systemd-cyan-proxy /usr/bin/caddy reload --config /etc/caddy/Caddyfile
+ExecReload=podman exec systemd-cyan-proxy /usr/bin/caddy reload --config /etc/caddy/Caddyfile --address unix//run/admin.sock --force
 
 [Container]
 Exec=/usr/bin/caddy run --config /etc/caddy/Caddyfile

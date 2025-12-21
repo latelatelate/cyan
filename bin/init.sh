@@ -5,6 +5,7 @@
 #
 INSTALL_DIR=/opt/cyan
 QUADLET_DIR=~/.config/containers/systemd/cyan
+SOCKET_DIR=~/.config/systemd/user/
 
 # Base project folder
 mkdir -p ${INSTALL_DIR}
@@ -17,7 +18,9 @@ sudo mv "$REPO_DIR" /opt/
 
 # Quadlet setup
 mkdir -p ${QUADLET_DIR}
+mkdir -p ${SOCKET_DIR}
 rsync -avu --delete ${INSTALL_DIR}/quadlets/ ${QUADLET_DIR}
+rsync -avu --delete ${INSTALL_DIR}/sockets/ ${SOCKET_DIR}
 
 systemctl --user daemon-reload
 
