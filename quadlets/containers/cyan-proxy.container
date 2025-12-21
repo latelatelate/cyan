@@ -1,7 +1,7 @@
 [Unit]
 Description=Caddy reverse proxy for cyan pod
-Requires=cyan.pod
-After=cyan.pod
+Requires=cyan.pod cyan-proxy.socket
+After=cyan.pod cyan-proxy.socket
 AssertPathIsDirectory=/opt/cyan/volumes/caddy-etc
 AssertPathExists=/opt/cyan/volumes/caddy-etc/Caddyfile
 AssertPathIsDirectory=%h/caddy_static

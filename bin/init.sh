@@ -34,3 +34,7 @@ sysctl -p /etc/sysctl.d/99-unprivileged-port.conf
 
 # Enable linger for rootless user
 loginctl enable-linger nm
+
+# Enable socket + quadlet by default
+systemctl --user enable cyan-proxy.socket
+systemctl --user enable cyan.pod
