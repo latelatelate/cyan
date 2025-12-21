@@ -19,6 +19,8 @@ sudo mv "$REPO_DIR" /opt/
 mkdir -p ${QUADLET_DIR}
 rsync -avu --delete ${INSTALL_DIR}/quadlets/ ${QUADLET_DIR}
 
+systemctl --user daemon-reload
+
 # SSL Certs
 mkdir -p ${INSTALL_DIR}/certs
 
