@@ -4,7 +4,7 @@ Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=docker.io/library/postgres:latest
+Image=docker.io/library/postgres:alpine
 Pod=cyan.pod
 Environment=POSTGRES_USER=base
 Environment=POSTGRES_PASSWORD=base
