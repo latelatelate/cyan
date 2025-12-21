@@ -1,6 +1,6 @@
 # Cyan
 
-A web application pod following blue/green deployment principles utilizing podman and caddy.
+A web application pod prototype following blue/green deployment principles utilizing rootless podman and caddy.
 
 ```mermaid
 graph LR;
@@ -13,6 +13,13 @@ graph LR;
 ```
 
 ## Usage
+
+After installing podman and cloning the cyan repo, `cd` into `cyan` repo dir and run `bin/init.sh` complete initial configuration. 
+
+```bash
+git clone -b dev cyan:latelatelate/cyan.git --verbose
+./cyan/bin/init.sh
+```
 
 Quadlets utilize systemd to manage services. Besides standard `podman` commands, we can also use:
 
@@ -28,7 +35,7 @@ Individual services within pods can also be micromanaged:
 systemctl --user reload cyan-proxy
 ```
 
-### Syncing quadlet files to systemd
+### Syncing quadlet files to systemd dir
 
 Currently using rsync to update systemd quadlet files with repo changes. To sync:
 
