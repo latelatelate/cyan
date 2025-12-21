@@ -3,13 +3,7 @@ Description=A Containerized Blue/Green Web Pod
 
 [Pod]
 PodName=cyan
-PublishPort=80:80
-PublishPort=443:443
-PublishPort=443:443/udp
 Network=cyan.network
-NetworkAlias=static.cyan.interal
-NetworkAlias=www.cyan.internal
-NetworkAlias=cyan.internal
 
 [Install]
 WantedBy=multi-user.target default.target
