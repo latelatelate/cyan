@@ -3,9 +3,10 @@
 # Initial configuration for podman host
 # TODO: Build out proper initilization + automation script
 #
-INSTALL_DIR=/opt/cyan
-QUADLET_DIR=~/.config/containers/systemd/cyan
-SOCKET_DIR=~/.config/systemd/user/
+PROJECT_NAME=cyan
+INSTALL_DIR=/opt/${PROJECT_NAME}
+QUADLET_DIR=~/.config/containers/systemd/${PROJECT_NAME}
+SOCKET_DIR=~/.config/systemd/user
 
 # Base project folder
 mkdir -p ${INSTALL_DIR}
@@ -20,7 +21,7 @@ sudo mv "$REPO_DIR" /opt/
 mkdir -p ${QUADLET_DIR}
 mkdir -p ${SOCKET_DIR}
 rsync -avu --delete ${INSTALL_DIR}/quadlets/ ${QUADLET_DIR}
-rsync -avu --delete ${INSTALL_DIR}/sockets/ ${SOCKET_DIR}
+cp -r ${INSTALL_DIR}/sockets/ ${SOCKET_DIR}
 
 systemctl --user daemon-reload
 
