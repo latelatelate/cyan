@@ -9,6 +9,24 @@
             idle 120s
         }
     }
+
+    # The sockets that are defined in the file caddy.socket
+	# are created by the systemd user manager. Those sockets
+	# are inherited by caddy. Note, these sockets are not
+	# created in the same network namespace that caddy is
+	# running in. Instead they were created in the initial
+	# user namespace.
+
+	# 2nd socket in the file caddy.socket
+	default_bind fd/4 {
+		protocols h1 h2
+	}
+
+	# 3rd socket in the file caddy.socket
+	default_bind fdgram/5 {
+		protocols h3
+	}
+	admin unix//run/admin.sock
 }
 
 import conf.d/*
