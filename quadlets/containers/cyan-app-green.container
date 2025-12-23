@@ -4,7 +4,7 @@ Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=docker.io/library/traefik/whoami:v1.11
+Image=docker.io/traefik/whoami:v1.11
 Pod=cyan.pod
 Volume=cyan-app.volume:/srv/app/data
 Environment=WHOAMI_PORT_NUMBER=8082
