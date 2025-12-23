@@ -1,13 +1,14 @@
 [Unit]
-Description=Blue NGINX server in cyan pod
+Description=Blue app server in cyan pod
 Requires=cyan.pod
 After=cyan.pod
 
 [Container]
-Image=localhost/cyan-app:blue
+Image=docker.io/library/traefik/whoami:v1.11
 Pod=cyan.pod
 Volume=cyan-app.volume:/srv/app/data
-Environment=PORT=8081
+Environment=WHOAMI_PORT_NUMBER=8081
+Environment=WHOAMI_NAME=BLUE
 
 [Service]
 Restart=always
